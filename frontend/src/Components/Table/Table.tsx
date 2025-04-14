@@ -14,7 +14,7 @@ const Table = (props: Props) => {
         {props.configs.map((val: any) => {
           return (
             <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-              {val.render(company)}
+              {val.render(company) == null ? "N/A" : val.render(company)}
             </td>
           );
         })}
@@ -32,14 +32,12 @@ const Table = (props: Props) => {
     );
   });
   return (
-    <div className="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8">
-      <table>
-        <thead className="min-w-full divide-y divide=gray-200 m-5">
-          {renderHeaders}
-        </thead>
-        <thead>{renderRow}</thead>
-      </table>
-    </div>
+    <table>
+      <thead className="min-w-full divide-y divide-gray-200 m-5">
+        <tr>{renderHeaders}</tr>
+      </thead>
+      <tbody>{renderRow}</tbody>
+    </table>
   );
 };
 

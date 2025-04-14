@@ -78,7 +78,6 @@ const IncomeStatement = (props: Props) => {
     <>
       {incomeStatement ? (
         <>
-          {" "}
           <Table configs={configs} data={incomeStatement} />
         </>
       ) : (
