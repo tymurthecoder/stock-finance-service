@@ -6,6 +6,7 @@ import SideBar from "../../Components/SideBar/SideBar";
 import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard";
 import Title from "../../Components/Title/Title";
 import Spinner from "../../Components/Spinner/Spinner";
+import CompFinder from "../../Components/CompFinder/CompFinder";
 
 interface Props {}
 
@@ -26,8 +27,12 @@ const CompanyPage = (props: Props) => {
       {company ? (
         <div className="w-full relative flex ct-docs-disable-sidebar-content overflow-x-hidden">
           <SideBar />
-         <CompanyDashboard ticker={ticker!}> 
-          <Title title="Company Name" subTitle={company.companyName}></Title> 
+          <CompanyDashboard ticker={ticker!}>
+            <Title title="Company Name" subTitle={company.companyName} />
+            <Title title="Price" subTitle={"$" + company.price.toString()} />
+            {/* <Title title="DCF" subTitle={"$" + company.dcf.toString()} /> */}
+            <Title title="Sector" subTitle={company.sector} />
+            <CompFinder ticker={company.symbol}/>
           </CompanyDashboard>
         </div>
       ) : (

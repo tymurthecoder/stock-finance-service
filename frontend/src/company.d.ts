@@ -401,3 +401,9 @@ export interface CompanySearch {
     link: string;
     finalLink: string;
   }
+
+
+  export interface CompanyCompData{
+    symbol: string;
+    peersList: string[];
+  }

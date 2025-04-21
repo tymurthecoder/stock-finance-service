@@ -75,7 +75,6 @@ const CompanyProfile = (props: Props) => {
     const getCompanyKeyMetric = async () => {
       const value = await getCompanyKeyMetrics(ticker);
       setCompanyData(value!.data[0]);
-      console.log(value)
     };
     getCompanyKeyMetric();
   }, []);
